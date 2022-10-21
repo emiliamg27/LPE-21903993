@@ -28,6 +28,16 @@ df %<>%mutate(happy=fct_rev(happy)) %>% view()
 # OUTCOME VARIABLES : HAPPINESS -------------------------------------------
 df %>% ggplot()+geom_bar(aes(happy, fill=happy))+theme(axis.title.x = element_blank(),legend.position = "none")#Plot
 
+#Frequencies for happy
+df %>% count(happy)
+df %<>% select(happy:health) %>% view()
+df %<>% filter(!is.na(happy))
 
 # HAPPINESS AND GENDER ----------------------------------------------------
 df %>% ggplot(aes(sex, fill=happy))+geom_bar(position ="fill")
+
+# HAPPINESS AND MARITAL STATUS --------------------------------------------
+
+# HAPPINESS AND EDUACTION LEVEL -------------------------------------------
+
+
